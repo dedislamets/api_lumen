@@ -28,14 +28,6 @@ class RegisterController extends Controller
 
     public function index()
     {
-        // $data = URL::temporarySignedRoute(
-        //     'verification.verify',
-        //     Carbon::now()->addMinutes(60),
-        //     [
-        //         'id' => 11,
-        //         'hash' => sha1('dedi.supatman@modena.com'),
-        //     ]);
-
         $data = Register::all();
         return response()->json($data);
     }
@@ -78,6 +70,12 @@ class RegisterController extends Controller
 
     public function store(Request $request)
     {
+        $user = Register::where(array('email' => $request->input('email'),"email_verified_at" => null))->first();
+        if(isset($user) ){
+            $user->sendEmailVerificationNotification();
+            return response()->json(['status' => 'error','msg' => 'The email not verified.',401]);
+        }
+
         $validator = Validator::make($request->all(), 
             [
                 'name' => ['required', 'string', 'max:255'],
