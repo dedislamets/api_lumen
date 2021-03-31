@@ -9,11 +9,13 @@ use Illuminate\Notifications\Notifiable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use App\Traits\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Auth\Passwords\CanResetPassword;
+use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 // use App\Notifications\VerifyEmail;
 
-class Register extends Model implements AuthenticatableContract, AuthorizableContract, JWTSubject
+class Register extends Model implements AuthenticatableContract, AuthorizableContract, JWTSubject,CanResetPasswordContract
 {
-	use Authenticatable, Authorizable, Notifiable, MustVerifyEmail;
+	use Authenticatable, Authorizable, Notifiable, MustVerifyEmail,CanResetPassword;
 
     protected $table = 'users';
 

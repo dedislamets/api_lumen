@@ -10,6 +10,7 @@
         "illuminate/mail": "^8.33",
         "illuminate/notifications": "^8.33",
         "laravel/lumen-framework": "^8.0",
+        "ramsey/uuid": "^4.1",
         "tymon/jwt-auth": "^1.0"
     },
     "require-dev": {

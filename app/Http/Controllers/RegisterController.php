@@ -8,9 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Carbon;
-// use Illuminate\Support\Facades\URL;
-// use Illuminate\Support\Facades\Config;
-// use Illuminate\Routing\UrlGenerator;
+
 use Validator;
 use Auth;
 
@@ -21,6 +19,8 @@ class RegisterController extends Controller
      *
      * @return void
      */
+
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -73,7 +73,7 @@ class RegisterController extends Controller
         $user = Register::where(array('email' => $request->input('email'),"email_verified_at" => null))->first();
         if(isset($user) ){
             $user->sendEmailVerificationNotification();
-            return response()->json(['status' => 'error','msg' => 'The email not verified.',401]);
+            return response()->json(['status' => 'error','msg' => 'The email not verified. new link already sent your email',401]);
         }
 
         $validator = Validator::make($request->all(), 
@@ -133,6 +133,9 @@ class RegisterController extends Controller
             $user = Register::where('email', $request->input('email'))->first();
 
             if(Hash::check($request->input('password'), $user->password)){
+                if(empty($user->email_verified_at)){
+                    return response()->json(['status' => 'fail','msg' => 'The email not verified.'],401);
+                }
                 return response()->json(['status' => 'success','msg' => $user]);
             }else{
                 return response()->json(['status' => 'fail'],401);

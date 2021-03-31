@@ -98,10 +98,11 @@ $app->register(App\Providers\EventServiceProvider::class);
 $app->register(\Illuminate\Mail\MailServiceProvider::class);
 $app->register(Tymon\JWTAuth\Providers\LumenServiceProvider::class);
 $app->register(\Illuminate\Notifications\NotificationServiceProvider::class);
+$app->register(\Illuminate\Auth\Passwords\PasswordResetServiceProvider::class);
 // $app->register(\Illuminate\Routing\RoutingServiceProvider::class);
 
-
 $app->configure('mail');
+$app->configure('services');
 $app->alias('mailer', Illuminate\Mail\Mailer::class);
 $app->alias('mailer', Illuminate\Contracts\Mail\Mailer::class);
 $app->alias('mailer', Illuminate\Contracts\Mail\MailQueue::class);
