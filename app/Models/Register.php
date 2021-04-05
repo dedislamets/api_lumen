@@ -11,6 +11,7 @@ use App\Traits\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Illuminate\Support\Facades\Mail;
 // use App\Notifications\VerifyEmail;
 
 class Register extends Model implements AuthenticatableContract, AuthorizableContract, JWTSubject,CanResetPasswordContract
@@ -59,6 +60,22 @@ class Register extends Model implements AuthenticatableContract, AuthorizableCon
 	     //        return $mail;
 	     //    });
 		});
+	}
+
+	public function sendPasswordResetNotification($token){
+
+	    $data = [
+	        $this->email
+	    ];
+
+	    Mail::send('reset', [
+	        'fullname'      => $this->name,
+	        'reset_url'     => "https://demo.development.modena.co.id/password/reset/". $token ."&email=". $this->email
+	        // route('user.password.reset', ['token' => $token, 'email' => $this->email]),
+	    ], function($message) use($data){
+	        $message->subject('Reset Password Request');
+	        $message->to($data[0]);
+	    });
 	}
 
 }
