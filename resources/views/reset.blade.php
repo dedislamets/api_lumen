@@ -85,10 +85,10 @@
           </tr>
           <tr>
             <td colspan="2" align="left" style=" padding-top:15px; padding-bottom:15px">
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" style=" font-family: Verdana, Tahoma, Arial; font-size:11px; color:#000000; text-decoration: none;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="font-size:11px; color:#000000; text-decoration: none;">
                 <tr>
                   <td align="right" valign="bottom">
-                    <table cellpadding="0" cellspacing="0" width="100%"  style=" font-family: Verdana, Tahoma, Arial; font-size:10px; color:#000000; text-decoration: none;">
+                    <table cellpadding="0" cellspacing="0" width="100%"  style="font-size:10px; color:#000000; text-decoration: none;">
                       <tr>
                         <td align="left">Join us at :</td>
                       </tr>
@@ -96,7 +96,7 @@
                         <td>&nbsp;</td>
                       </tr>
                       <tr>
-                        <td align="center" valign="top"><span style="padding-right:10px;padding-left:10px;padding-bottom:5px;line-height:25px;letter-spacing:0px;text-decoration:none;font-family: Verdana, Tahoma, Arial; font-size:12px; color:#FFFFFF; "><img src="http://www.modena.co.id/newsletter/uploads/reg/2013-12/footer.jpg" width="90%" usemap="#Map" border="0" /></span></td>
+                        <td align="center" valign="top"><span style="padding-right:10px;padding-left:10px;padding-bottom:5px;line-height:25px;letter-spacing:0px;text-decoration:none;font-size:12px; color:#FFFFFF; "><img src="http://www.modena.co.id/newsletter/uploads/reg/2013-12/footer.jpg" width="90%" usemap="#Map" border="0" /></span></td>
                       </tr>
                     </table>          
                   </td>         
@@ -108,7 +108,7 @@
             <td align="left" >
               <table width="100%" cellpadding="0" cellspacing="0" border="0" style=" font-family:  Verdana, Arial, Tahoma; font-size: 10px; color: #FF6600; text-decoration: none;">
                 <tr>
-                  <td align="left" style=" font-family:  Verdana, Arial, Tahoma; font-size: 10px; color: #FF6600; text-decoration: none;" valign="bottom">
+                  <td align="left" style="font-size: 10px; color: #FF6600; text-decoration: none;" valign="bottom">
                     <a class=submenu href="http://www.modena.co.id/privacy_policy.php">privacy policy</a> | <a class=submenu href="http://www.modena.co.id/">modena.co.id</a> <br>
                     copyrights&copy;1981-2016 modena.co.id 
                   </td>
