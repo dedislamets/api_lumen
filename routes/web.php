@@ -30,9 +30,11 @@ $router->group(['prefix' => 'api'] , function($router){
 $router->group(['middleware' => ['auth', 'verified']], function () use ($router) {
 	$router->post('/logout', 'AuthController@logout');
   	$router->get('/user', 'AuthController@user');
+  	
 });
 
 $router->get('email/verify/{id}', 'VerificationController@verify');
 
 $router->post('password/reset-request', 'RequestPasswordController@sendResetLinkEmail');
 $router->post('password/reset', [ 'as' => 'password.reset', 'uses' => 'ResetPasswordController@reset' ]);
+$router->get('/migrate', 'MigrateController@membersdata');
